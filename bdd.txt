@@ -1,0 +1,145 @@
+CREATE TABLE devoirs_rendus (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_devoir INT NOT NULL,
+    id_mpianatra INT NOT NULL,
+    fichier VARCHAR(255),
+    date_envoi DATETIME,
+    appreciation VARCHAR(255),
+    FOREIGN KEY (id_devoir) REFERENCES devoir(id),
+    FOREIGN KEY (id_mpianatra) REFERENCES mpianatra(id)
+);
+
+
+CREATE TABLE rakitra (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_prof INT NOT NULL,
+    matiere VARCHAR(100) NOT NULL,
+    classe VARCHAR(50) NOT NULL,
+    titre VARCHAR(255) NOT NULL,
+    fichier VARCHAR(255),
+    date_pub DATE DEFAULT CURRENT_DATE
+);
+
+CREATE TABLE devoirs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_prof INT NOT NULL,
+    matiere VARCHAR(100) NOT NULL,
+    classe VARCHAR(50) NOT NULL,
+    titre VARCHAR(255) NOT NULL,
+    description TEXT,
+    date_limite DATE,
+    fichier VARCHAR(255),
+    date_pub DATE DEFAULT CURRENT_DATE
+);
+
+CREATE TABLE notes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_prof INT NOT NULL,
+    id_mpianatra INT NOT NULL,
+    matiere VARCHAR(100) NOT NULL,
+    classe VARCHAR(50) NOT NULL,
+    note DECIMAL(4,2) NOT NULL,
+    date_note DATE,
+    type_note VARCHAR(50),
+    appreciation VARCHAR(100)
+);
+
+CREATE TABLE ecolage (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_mpianatra INT NOT NULL,
+    volana VARCHAR(20), -- Ex: 'Janoary', 'Febroary', etc.
+    taona INT,          -- Ex: 2025
+    vola DECIMAL(10,2), -- Montant à payer
+    efa_voaloa TINYINT(1) DEFAULT 0, -- 1 = payé, 0 = non payé
+    daty_voaloa DATE DEFAULT NULL
+);
+
+
+CREATE TABLE vaovao (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    lohateny VARCHAR(255),
+    daty DATE,
+    ora TIME,
+    votoaty TEXT,
+    mpandefa VARCHAR(100),
+    mpandray VARCHAR(100), -- "rehetra", "mpampianatra", "mpianatra", "3ème", etc
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+CREATE TABLE fandaharana (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    lohateny VARCHAR(100) NOT NULL,
+    karazana VARCHAR(50),
+    daty DATE NOT NULL,
+    ora_manomboka TIME NOT NULL,
+    ora_mifarana TIME NOT NULL,
+    efitrano VARCHAR(50),
+    mpampianatra VARCHAR(100),
+    kilasy VARCHAR(50),
+    fanamarihana VARCHAR(255),
+    anarana_admin VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+ALTER TABLE fandaharana ADD COLUMN mpampianatra_ids VARCHAR(255) DEFAULT NULL;
+
+
+CREATE TABLE fahatarana_tsy_fahatongavana (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sokajy ENUM('mpianatra','mpampianatra') NOT NULL,
+    id_persona INT NOT NULL,
+    anarana VARCHAR(100),
+    fanampiny VARCHAR(100),
+    kilasy VARCHAR(50),
+    daty DATE,
+    karazana ENUM('Absence','Retard'),
+    fanamarihana VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE mpianatra (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    anarana VARCHAR(100) NOT NULL,
+    fanampiny VARCHAR(100) NOT NULL,
+    daty_nahaterahana DATE NOT NULL,
+    lahy_vavy ENUM('lahy','vavy') NOT NULL,
+    ray VARCHAR(100),
+    reny VARCHAR(100),
+    finday_ray VARCHAR(20),
+    finday_reny VARCHAR(20),
+    adiresy VARCHAR(255),
+    kilasy VARCHAR(50),
+    solonanarana VARCHAR(50) NOT NULL UNIQUE,
+    tenimiafina VARCHAR(255) NOT NULL,
+    sary VARCHAR(255) DEFAULT NULL,
+    nahary_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE mpampianatra (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    anarana VARCHAR(100) NOT NULL,
+    fanampiny VARCHAR(100) NOT NULL,
+    cin VARCHAR(20) NOT NULL,
+    daty_nahaterahana DATE NOT NULL,
+    lahy_vavy ENUM('lahy','vavy') NOT NULL,
+    finday VARCHAR(20),
+    adiresy VARCHAR(255),
+    diploma VARCHAR(100),
+    taranja VARCHAR(100),
+    solonanarana VARCHAR(50) NOT NULL UNIQUE,
+    tenimiafina VARCHAR(255) NOT NULL,
+    sary VARCHAR(255) DEFAULT NULL,
+    nahary_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS admins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    motdepasse VARCHAR(255) NOT NULL,
+    date_inscription DATETIME DEFAULT CURRENT_TIMESTAMP
+);

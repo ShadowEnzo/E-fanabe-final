@@ -1,0 +1,55 @@
+from collections import deque
+
+def vakio_rakitra(anaran_rakitra):
+    with open(anaran_rakitra, 'r') as f:
+        sary = [list(ligne.strip()) for ligne in f]
+    return sary
+
+def mitady(toetra, sary):
+    for i in range(len(sary)):
+        for j in range(len(sary[i])):
+            if sary[i][j] == toetra:
+                return (i, j)
+    return None
+
+def manodidina(i, j, n):
+    fits = []
+    for x, y in [(-1,0),(1,0),(0,-1),(0,1)]:
+        ni, nj = i+x, j+y
+        if 0 <= ni < n and 0 <= nj < n:
+            fits.append((ni, nj))
+    return fits
+
+def mitady_lalana(sary):
+    n = len(sary)
+    S = mitady('S', sary)
+    D = mitady('D', sary)
+    if not S or not D:
+        return "Diso ny lalana"
+
+    queue = deque([S])
+    nivoaka = {S: None}
+
+    while queue:
+        i, j = queue.popleft()
+        if (i, j) == D:
+            lalana = []
+            nandalo_loharano = False
+            while (i, j) is not None:
+                if sary[i][j] == 'E':
+
+                    nandalo_loharano = True
+                lalana.append((i, j))
+                i, j = nivoaka[(i, j)]
+            lalana.reverse()
+            if nandalo_loharano:
+                return f"Nisy lalana niaraka tamin’ny loharano: {lalana}"
+            else:
+                return f"Nisy lalana tsy nandalo loharano: {lalana}"
+
+        for ni, nj in manodidina(i, j, n):
+            if (ni, nj) not in nivoaka and sary[ni][nj] in ['T', 'E', 'D']:
+                nivoaka[(ni, nj)] = (i, j)
+                queue.append((ni, nj))
+
+    return "Tsy misy lalana"

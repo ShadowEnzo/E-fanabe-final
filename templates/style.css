@@ -1,0 +1,256 @@
+:root {
+    --loko-fototra: #0E3C65;
+    --loko-fototra-maivana: #1a5a92;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+body {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.lohany {
+    background-color: var(--loko-fototra);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    z-index: 1020;
+}
+
+/* SIDEBAR */
+.menu-ankavia {
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 65px; /* Hauteur du header fixée */
+    width: 250px;
+    height: 70vh;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    z-index: 800;
+    overflow-y: auto;
+}
+
+.menu-ankavia a {
+    color: #333;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.3s;
+}
+
+.menu-ankavia a:hover {
+    background-color: #f0f0f0;
+    border-left: 3px solid var(--loko-fototra);
+}
+
+.menu-ankavia a i {
+    margin-right: 10px;
+    color: var(--loko-fototra);
+}
+
+/* MAIN CONTENT */
+.votoaty {
+    flex: 1 0 auto;
+    padding-top: 85px; /* laisser la place du header */
+    transition: margin 0.3s ease;
+    min-height: 1px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+    .menu-ankavia {
+        transform: none !important;
+    }
+    .votoaty {
+        margin-left: 250px;
+    }
+    .tsindry-hamburger {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-ankavia {
+        transform: translateX(-100%);
+        width: 250px;
+        left: 0;
+        top: 65px;
+        bottom: 0;
+        height: auto;
+    }
+    .menu-ankavia.miseho {
+        transform: translateX(0);
+    }
+    .votoaty {
+        margin-left: 0 !important;
+    }
+    .tsindry-hamburger {
+        display: block;
+    }
+}
+
+/* FOOTER toujours collé en bas si contenu court */
+.tongotra {
+    background-color: var(--loko-fototra);
+    color: white;
+    padding: 20px 0;
+    width: 100vw;
+    position: relative;
+    z-index: 10;
+    clear: both;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+/* Hamburger button */
+.tsindry-hamburger {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    margin-right: 10px;
+}
+
+/* Dropdown menu for learning categories */
+.lisitra-sokajy {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-left: 20px;
+}
+.lisitra-sokajy.miseho {
+    max-height: 500px;
+}
+
+/* Login form specifics */
+.tany-mainty {
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+.trano-fampidirana {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.sary-famantarana {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 200px;
+}
+.tandrokely {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.boky-fampidirana {
+    margin-bottom: 15px;
+}
+.boky-fampidirana label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.boky-fampidirana select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.tsindry-hiditra {
+    background-color: #1877f2;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.tsindry-hiditra:hover {
+    background-color: #166fe5;
+}
+.rohy-fisoratana {
+    color: #1877f2;
+    text-decoration: none;
+}
+.rohy-fisoratana:hover {
+    text-decoration: underline;
+}
+
+/* Card, table, etc. */
+.takelaka-fandraisana, .card, .boite-vaovao, .boky-fanamarihana {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.boky-fanamarihana {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--loko-fototra);
+    padding: 15px;
+    margin: 20px 0;
+}
+.table-naoty th, .table-naoty thead th {
+    background-color: var(--loko-fototra);
+    color: white;
+}
+.moyenne {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--loko-fototra);
+}
+
+/* Style pour le logo dans le sidebar */
+.menu-ankavia .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.menu-ankavia .logo-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--loko-fototra);
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 10px;
+    transition: box-shadow 0.2s;
+}
+.menu-ankavia .logo-img:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+    .menu-ankavia .logo-img {
+        width: 55px;
+        height: 55px;
+    }
+}
