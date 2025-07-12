@@ -4,7 +4,7 @@ if (!isset($_SESSION['id']) || $_SESSION['profil'] !== 'mpianatra') {
     header('Location: ../fidirana.php');
     exit;
 }
-$pdo = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 $kilasy = $_SESSION['kilasy'] ?? '';
 
 // Pas de filtre semaine : on récupère tout ce qui concerne cet élève

@@ -1,5 +1,5 @@
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=e_fanabe;charset=utf8mb4", "root", "");
+$pdo = new PDO("mysql:host=localhost;dbname=e-fanabe;charset=utf8mb4", "root", "");
 $success = $error = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -14,7 +14,7 @@
             <a href="fandaharam_potoana_mpampianatra.php"><i class="fas fa-calendar-alt"></i> Fandaharam-potoana</a>
             <a href="rakitra.php"><i class="fas fa-folder-open"></i> Rakitra & Cours</a>
             <a href="vaovao.php"><i class="fas fa-newspaper"></i> Vaovao</a>
-            <a href="http://127.0.0.1:8000/"><i class="fas fa-newspaper"></i> Boty Malagasy</a>
+            <a href="http://127.0.0.1:8000/">🤖 Boty Malagasy</a>
             <a href="../mivoaka.php"><i class="fas fa-sign-out"></i> Hivoaka</a>
         </div>
     </nav>

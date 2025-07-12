@@ -7,7 +7,7 @@ $admin = $_SESSION['anarana'] ?? 'Admin';
 <html lang="mg">
 <head>
     <meta charset="UTF-8">
-    <title>EduPlateforme MG - Admin</title>
+    <title>EduPlateforme MG - Mpiandraikitra</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
      <link rel="stylesheet" href="../style.css">
@@ -23,7 +23,7 @@ include("../sisiny_mpitantana.php");
 <main class="votoaty" id="votoaty">
     <div class="container-fluid">
         <div class="takelaka-fandraisana">
-            <h2 class="mb-4"><i class="fas fa-chalkboard text-primary me-2"></i>Pejy fandraisana (Admin)</h2>
+            <h2 class="mb-4"><i class="fas fa-chalkboard text-primary me-2"></i>Pejy fandraisana (Mpiandraikitra)</h2>
             <div class="alert alert-info mb-4">
                 <i class="fas fa-info-circle me-2"></i> Eto no itantanana ny mpampiasa, mpianatra, mpampianatra, fandaharam-potoana sy vaovao rehetra.
             </div>

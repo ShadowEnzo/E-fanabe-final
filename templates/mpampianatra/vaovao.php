@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 
 // Pas de filtre semaine : on récupère tout ce qui concerne les professeurs
 $stmt = $pdo->prepare("

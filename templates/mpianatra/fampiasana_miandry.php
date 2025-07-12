@@ -4,7 +4,7 @@ if (!isset($_SESSION['id']) || $_SESSION['profil'] !== 'mpianatra') {
     header('Location: ../fidirana.php');
     exit;
 }
-$pdo = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 $classe = $_SESSION['kilasy'];
 $id_mpianatra = $_SESSION['id'];
 
@@ -43,7 +43,7 @@ usort($fampiasana, function($a, $b) {
 <html lang="mg">
 <head>
     <meta charset="UTF-8">
-    <title>Fampiasana/Devoirs & Leçons miandry (toutes matières)</title>
+    <title>Fampiasana & Lesona miandry</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
@@ -52,7 +52,7 @@ usort($fampiasana, function($a, $b) {
 <?php include("../loha.php"); include("../sisiny_mpianatra.php"); ?>
 <main class="votoaty" id="votoaty">
 <div class="container py-4">
-    <h2>Ireo fampiasana/devoirs & leçons miandry (Kilasy <?= htmlspecialchars($classe ?? '') ?>)</h2>
+    <h2>Ireo fampiasana & lesona miandry (Kilasy <?= htmlspecialchars($classe ?? '') ?>)</h2>
     <table class="table">
         <thead>
             <tr>
@@ -102,7 +102,7 @@ usort($fampiasana, function($a, $b) {
             </tr>
             <?php endforeach; ?>
             <?php if(!$fampiasana): ?>
-            <tr><td colspan="5" class="text-muted">Tsy misy fampiasana/devoir na leçon miandry.</td></tr>
+            <tr><td colspan="5" class="text-muted">Tsy misy fampiasana na lesona miandry.</td></tr>
             <?php endif; ?>
         </tbody>
     </table>

@@ -1,6 +1,6 @@
 <?php
 // Connexion à la base de données
-$mpampifandray = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$mpampifandray = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 
 // Récupération de tous les professeurs
 $fanontaniana = $mpampifandray->query("SELECT * FROM mpampianatra ORDER BY anarana ASC");
@@ -45,10 +45,10 @@ include("../sisiny_mpitantana.php");
                                 <th>Fanampiny</th>
                                 <th>CIN</th>
                                 <th>Daty nahaterahana</th>
-                                <th>Sexe</th>
+                                <th>Sokajy</th>
                                 <th>Telefaona</th>
                                 <th>Taranja</th>
-                                <th>Ts tonga/Tara</th>
+                                <th>Tsy tonga/Tara</th>
                                 <th>Hetsika</th>
                             </tr>
                         </thead>

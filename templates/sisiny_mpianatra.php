@@ -1,6 +1,6 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 $classe_eleve = $_SESSION['kilasy'] ?? '';
 // Récupérer toutes les matières où il y a du contenu pour cette classe
 $stmt = $pdo->prepare("
@@ -44,7 +44,7 @@ $matieres = $stmt->fetchAll(PDO::FETCH_COLUMN);
             <?php endif; ?>
         </div>
         <a href="vao2.php"><i class="fas fa-newspaper"></i> Ireo vaovao samihafa</a>
-        <a href="http://127.0.0.1:8000/"><i class="fas fa-newspaper"></i> Boty Malagasy</a>
+        <a href="http://127.0.0.1:8000/">🤖 Boty Malagasy</a>
         <a href="/E-fanabe/templates/mpitantana/ecolage_mpianatra.php?id=<?= $_SESSION['id'] ?>"><i class="fas fa-money"></i>Saram-pianarana</a>
         <a href="../mivoaka.php"><i class="fas fa-sign-out"></i> Hivoaka</a>
     </div>

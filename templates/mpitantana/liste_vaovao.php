@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 
 if (isset($_GET['delete'])) {
     $id = intval($_GET['delete']);
@@ -16,7 +16,7 @@ $actu = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="mg">
 <head>
     <meta charset="UTF-8">
-    <title>Vaovao - Admin</title>
+    <title>Vaovao</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
      <link rel="stylesheet" href="../style.css">
@@ -30,7 +30,7 @@ include("../sisiny_mpitantana.php");
 ?>
 <main class="votoaty" id="votoaty">
 <div class="container py-4">
-    <h2><i class="fas fa-newspaper me-2"></i> Fampahafantarana/vaovao (Admin)</h2>
+    <h2><i class="fas fa-newspaper me-2"></i> Fampahafantarana/vaovao (Mpiandraikitra)</h2>
     <a href="fampahafantarana.php" class="btn btn-success mb-3">+ Vaovao/Fampahafantarana</a>
     <div class="table-responsive">
         <table class="table table-hover align-middle">

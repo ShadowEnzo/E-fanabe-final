@@ -31,7 +31,7 @@ include("../sisiny_mpianatra.php");  // inclut le contenu du fichier header.php 
             <div class="alert alert-info d-flex align-items-center my-3" role="alert">
                 <i class="fas fa-coins fa-2x me-3"></i>
                 <div>
-                    <strong>Ecolage&nbsp;:</strong> Raha mbola tsy nandoa ianao dia aza adino ny mandoa alohan'ny <b>15/07/2025</b>.
+                    <strong>Saram-pianarana&nbsp;:</strong> Raha mbola tsy nandoa ianao dia aza adino ny mandoa alohan'ny <b>15/07/2025</b>.
                 </div>
             </div>
             <div class="row">
@@ -39,7 +39,7 @@ include("../sisiny_mpianatra.php");  // inclut le contenu du fichier header.php 
                     <h4><i class="fas fa-bell text-warning me-2"></i>Fampahafantarana</h4>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Fivoriana ho an'ny ray aman-dreny 15/10/2025</li>
-                        <li class="list-group-item">Daty farany handoa ny écolage 15/07/2025</li>
+                        <li class="list-group-item">Daty farany handoavana ny saram-pianarana 15/07/2025</li>
                         <li class="list-group-item">Fanadinana farany 15/12/2025</li>
                     </ul>
                 </div>

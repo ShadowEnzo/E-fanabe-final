@@ -1,5 +1,5 @@
 <?php
-$mpampifandray = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$mpampifandray = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 $fanontaniana = $mpampifandray->query("SELECT * FROM fahatarana_tsy_fahatongavana ORDER BY daty DESC");
 ?>
 <!DOCTYPE html>

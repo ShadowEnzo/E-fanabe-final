@@ -1,6 +1,6 @@
 <?php
 // Connexion à la base de données
-$mpampifandray = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$mpampifandray = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 
 // Message de retour
 $hafatra = "";
@@ -120,7 +120,7 @@ include("../sisiny_mpitantana.php");
                 <input type="text" class="form-control" name="kilasy">
             </div>
             <div class="col-md-6">
-                <label class="form-label"><span class="text-danger">*</span> Solon'anarana (Username)</label>
+                <label class="form-label"><span class="text-danger">*</span> Solon'anarana</label>
                 <input type="text" class="form-control" name="solonanarana" required>
             </div>
             <div class="col-md-6">

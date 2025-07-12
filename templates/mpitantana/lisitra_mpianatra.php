@@ -1,6 +1,6 @@
 <?php
 // Connexion et récupération des élèves (inchangé)
-$mpampifandray = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$mpampifandray = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 
 $kilasy_requete = $mpampifandray->query("SELECT DISTINCT kilasy FROM mpianatra ORDER BY kilasy ASC");
 $kilasy_liste = $kilasy_requete->fetchAll(PDO::FETCH_COLUMN);
@@ -41,7 +41,7 @@ include("../sisiny_mpitantana.php");
             <h2><i class="fas fa-users me-2"></i>Lisitry ny Mpianatra</h2>
             <form method="get" class="d-flex align-items-center" id="filtreForm">
                 <select class="form-select form-select-sm w-auto" name="kilasy" onchange="document.getElementById('filtreForm').submit()">
-                    <option value="">Toutes les classes</option>
+                    <option value="">Kilasy rehetra</option>
                     <?php foreach($kilasy_liste as $kilasy): ?>
                         <option value="<?= htmlspecialchars($kilasy) ?>" <?= $kilasy_voafantina === $kilasy ? 'selected' : '' ?>>
                             <?= htmlspecialchars($kilasy) ?>
@@ -61,12 +61,12 @@ include("../sisiny_mpitantana.php");
                                 <th>Anarana</th>
                                 <th>Fanampiny</th>
                                 <th>Daty nahaterahana</th>
-                                <th>Sexe</th>
+                                <th>Sokajy</th>
                                 <th>Telefaona ray</th>
                                 <th>Telefaona reny</th>
                                 <th>Kilasy</th>
                                 <th>Tsy tonga/tara</th>
-                                <th>Écolage</th>
+                                <th>Saram-pianarana</th>
                                 <th>Hetsika</th>
                             </tr>
                         </thead>

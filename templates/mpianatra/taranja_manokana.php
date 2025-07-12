@@ -4,7 +4,7 @@ if (!isset($_SESSION['id']) || $_SESSION['profil'] !== 'mpianatra') {
     header('Location: ../fidirana.php');
     exit;
 }
-$pdo = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 $id_mpianatra = $_SESSION['id'];
 $classe = $_SESSION['kilasy'];
 $matiere = $_GET['matiere'] ?? 'Matematika';
@@ -28,7 +28,7 @@ $notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="mg">
 <head>
     <meta charset="UTF-8">
-    <title><?= htmlspecialchars($matiere) ?> (Matière)</title>
+    <title><?= htmlspecialchars($matiere) ?> (Taranja)</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
      <link rel="stylesheet" href="../style.css">
@@ -45,7 +45,7 @@ include("../sisiny_mpianatra.php");
         <div class="col-md-8">
             <!-- Devoirs matière -->
             <div class="card mb-3">
-                <div class="card-header">Devoirs amin'ity matière ity</div>
+                <div class="card-header">Fampiasa amin'ity taranja ity</div>
                 <div class="card-body">
                     <ul class="list-group">
                         <?php foreach($devoirs as $d): ?>
@@ -71,12 +71,12 @@ include("../sisiny_mpianatra.php");
                                     <button class="btn btn-sm btn-success" type="submit">Envoyer</button>
                                 </form>
                             <?php else: ?>
-                                <span class="badge bg-success">Déjà envoyé</span>
+                                <span class="badge bg-success">Efa lasa</span>
                             <?php endif; ?>
                         </li>
                         <?php endforeach; ?>
                         <?php if(!$devoirs): ?>
-                        <li class="list-group-item text-muted">Tsy misy devoir.</li>
+                        <li class="list-group-item text-muted">Tsy misy fampiasana.</li>
                         <?php endif; ?>
                     </ul>
                 </div>
@@ -108,7 +108,7 @@ include("../sisiny_mpianatra.php");
                 <div class="card-body">
                     <table class="table table-sm">
                         <thead>
-                            <tr><th>Note</th><th>Date</th><th>Type</th><th>Appreciation</th></tr>
+                            <tr><th>Naoty</th><th>Daty</th><th>Karazana</th><th>Fanamarihana</th></tr>
                         </thead>
                         <tbody>
                         <?php foreach($notes as $n): ?>

@@ -1,0 +1,10 @@
+-système de message (mp)
+-fijerevana ireo taratasin'ny mpampianatra (karama,...)
+-apiana système de tâches régulière ny mpampianatra
+-apiana système de notation globale (manome ny moyenne sy ny laharana dynamiquqment, ary tokony ho hitan'ny admin sy ny mpampianatra izany [efa ao fa mila asiana fanamboarana kely]) sy fanesorana (na modification @ izany)
+/////////////////////Tsy mbola mandeha:///////////////////////////
+-téléchargement de dossier
+-page d'acceuil mpianatra: afficher-na ny naoty vao nilatsaka sy ny fampahafantarana vitsivitsy.
+-page d'acceuil mpampianatra: miandry ny système de tâhces régulière dia afficher-na eo izany, sy ireo fampahafantarana telo voalohany voarainy.
+
+

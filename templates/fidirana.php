@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 $hafatra = "";
 
 // Fikirakirana ny fangatahana fidirana
@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <option value="" selected disabled>Safidio ny andraikitrao</option>
                         <option value="mpampianatra">Mpampianatra</option>
                         <option value="mpianatra">Mpianatra</option>
-                        <option value="admin">Admin</option>
+                        <option value="admin">Mpiandraikitra</option>
                     </select>
                 </div>
                 <button type="submit" class="btn tsindry-hiditra">Hiditra</button>

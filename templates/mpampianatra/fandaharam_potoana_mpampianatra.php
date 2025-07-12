@@ -4,7 +4,7 @@ if (!isset($_SESSION['id']) || $_SESSION['profil'] !== 'mpampianatra') {
     header('Location: ../fidirana.php');
     exit;
 }
-$mpampifandray = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$mpampifandray = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 $id_mpampianatra = $_SESSION['id'];
 
 // Ireo fandaharana an'ny mpampianatra
@@ -17,7 +17,7 @@ $fandaharana = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="mg">
 <head>
     <meta charset="UTF-8">
-    <title>Fandaharam-potoana Professeur</title>
+    <title>Fandaharam-potoana mpampianatra</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
      <link rel="stylesheet" href="../style.css">

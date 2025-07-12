@@ -4,7 +4,7 @@ if (!isset($_SESSION['id']) || $_SESSION['profil'] !== 'mpianatra') {
     header('Location: ../fidirana.php');
     exit;
 }
-$mpampifandray = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$mpampifandray = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 $kilasy = $_SESSION['kilasy'];
 
 $stmt = $mpampifandray->prepare("SELECT * FROM fandaharana WHERE kilasy = ? ORDER BY daty, ora_manomboka");

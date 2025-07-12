@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 
 if (!isset($_SESSION['id']) || $_SESSION['profil'] !== 'mpampianatra') {
     header('Location: ../fidirana.php');
@@ -24,7 +24,7 @@ if (!empty($classe)) {
     if (!is_array($eleves)) { $eleves = []; }
 }
 
-//Manampu naoty
+//Manampy naoty
 $info = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_naoty']) && !empty($classe)) {
     if (!empty($_POST['note']) && is_array($_POST['note'])) {
@@ -55,7 +55,7 @@ if (!empty($classe)) {
 <html lang="mg">
 <head>
     <meta charset="UTF-8">
-    <title>Fitantanana naoty (Professeur)</title>
+    <title>Fitantanana naoty (mpampianatra)</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
@@ -65,11 +65,11 @@ if (!empty($classe)) {
 <?php include("../sisiny_mpampianatra.php"); ?>
 <main class="votoaty" id="votoaty">
 <div class="container py-4">
-    <h2>Fitantanana naoty – <?= htmlspecialchars($matiere ?? '') ?> (Professeur)</h2>
+    <h2>Fitantanana naoty – <?= htmlspecialchars($matiere ?? '') ?> (mpampianatra)</h2>
     <?= $info ?>
     <!-- Fitsinjnarana ny kilasy -->
     <form class="row g-2 mb-3" method="get" action="">
-        <label class="col-form-label col-auto">Classe :</label>
+        <label class="col-form-label col-auto">kilasy :</label>
         <div class="col-auto">
             <select name="classe" class="form-select" onchange="this.form.submit()">
                 <?php foreach($classes as $c): ?>
@@ -88,9 +88,9 @@ if (!empty($classe)) {
                     <th>Anarana</th>
                     <th>Fanampiny</th>
                     <th>Naoty</th>
-                    <th>Type</th>
-                    <th>Appreciation</th>
-                    <th>Date</th>
+                    <th>karazana</th>
+                    <th>Fanamarihana</th>
+                    <th>Daty</th>
                 </tr>
             </thead>
             <tbody>
@@ -104,7 +104,7 @@ if (!empty($classe)) {
                     <td>
                         <select name="type_note[<?= $el['id'] ?>]" class="form-select" required>
                             <option value="Fanadinana">Fanadinana</option>
-                            <option value="Devoir">Devoir</option>
+                            <option value="Devoir">Fampiasana</option>
                             <option value="TP">TP</option>
                         </select>
                     </td>
@@ -118,24 +118,24 @@ if (!empty($classe)) {
                 <?php endforeach; ?>
             </tbody>
         </table>
-        <button class="btn btn-success" type="submit">Ajouter les notes</button>
+        <button class="btn btn-success" type="submit">Hanampy naoty</button>
     </form>
     <?php elseif(!empty($classe)): ?>
         <div class="alert alert-info">Tsy misy mpianatra amin'ity kilasy ity.</div>
     <?php endif; ?>
     <!-- Ireo naoty efa misy  -->
     <div class="card">
-        <div class="card-header">Naoty pour la classe : <b><?= htmlspecialchars($classe ?? '') ?></b></div>
+        <div class="card-header">Naotin'ny kilasy : <b><?= htmlspecialchars($classe ?? '') ?></b></div>
         <div class="card-body">
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Anarana</th>
                         <th>Fanampiny</th>
-                        <th>Note</th>
-                        <th>Type</th>
-                        <th>Date</th>
-                        <th>Appreciation</th>
+                        <th>Naoty</th>
+                        <th>karazana</th>
+                        <th>daty</th>
+                        <th>fanamarihana</th>
                     </tr>
                 </thead>
                 <tbody>

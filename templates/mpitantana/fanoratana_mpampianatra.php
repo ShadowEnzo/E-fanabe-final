@@ -1,6 +1,6 @@
 <?php
 // Paramètres de connexion à la base de données
-$mpampifandray = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$mpampifandray = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 
 // Message de retour à l’utilisateur
 $hafatra = "";
@@ -87,7 +87,7 @@ include("../sisiny_mpitantana.php");
                 <input type="text" class="form-control" name="fanampiny" required>
             </div>
             <div class="col-md-6">
-                <label class="form-label">Nomerao CIN</label>
+                <label class="form-label">Laharana CIN</label>
                 <input type="text" class="form-control" name="cin" required>
             </div>
             <div class="col-md-6">
@@ -126,7 +126,7 @@ include("../sisiny_mpitantana.php");
                 <input type="password" class="form-control" name="tenimiafina" required>
             </div>
             <div class="col-md-6">
-                <label class="form-label">Sary (photo de profil)</label>
+                <label class="form-label">Sary</label>
                 <input type="file" class="form-control" name="sary" accept="image/*">
             </div>
             <div class="col-12">

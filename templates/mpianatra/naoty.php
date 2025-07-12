@@ -4,7 +4,7 @@ if (!isset($_SESSION['id']) || $_SESSION['profil'] !== 'mpianatra') {
     header('Location: ../fidirana.php');
     exit;
 }
-$pdo = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 $id_mpianatra = $_SESSION['id'];
 
 $stmt = $pdo->prepare("SELECT * FROM notes WHERE id_mpianatra=? ORDER BY matiere, date_note DESC");
@@ -29,7 +29,7 @@ $notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Taranja</th><th>Naoty</th><th>Daty</th><th>KArazany</th><th>Fanamarihana</th>
+                <th>Taranja</th><th>Naoty</th><th>Daty</th><th>Karazany</th><th>Fanamarihana</th>
             </tr>
         </thead>
         <tbody>

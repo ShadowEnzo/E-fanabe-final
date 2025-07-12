@@ -1,6 +1,6 @@
 <?php
 // Connexion
-$mpampifandray = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$mpampifandray = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 $fanontaniana = $mpampifandray->query("SELECT * FROM fandaharana ORDER BY daty DESC, ora_manomboka");
 ?>
 <!DOCTYPE html>
@@ -35,7 +35,7 @@ include("../sisiny_mpitantana.php");
                     <th>Kilasy</th>
                     <th>Efitrano</th>
                     <th>Fanamarihana</th>
-                    <th>Admin</th>
+                    <th>Mpiandraikitra</th>
                     <th>Hetsika</th>
                 </tr>
             </thead>

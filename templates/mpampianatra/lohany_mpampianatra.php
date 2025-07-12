@@ -1,9 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['id']) || $_SESSION['profil'] !== 'mpampianatra') {
-    header('Location: lohany_mpampianatra.php');
-    exit;
-}
+
 $prof_nom = $_SESSION['anarana'] ?? 'Professeur';
 $matiere = $_SESSION['matiere'] ?? 'Taranja';
 ?>
@@ -35,7 +32,7 @@ include("../sisiny_mpampianatra.php");
                     <h4><i class="fas fa-list-check text-success me-2"></i>Asa amin'ity herinandro ity</h4>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Manampy naoty <?= htmlspecialchars($matiere) ?> <span class="badge bg-primary float-end">Andrasana</span></li>
-                        <li class="list-group-item">Manampy rakitra amin'ny cours</li>
+                        <li class="list-group-item">Manampy rakitra amin'ny fandaharana</li>
                         <li class="list-group-item">Manao fanitsiana fandaharam-potoana</li>
                     </ul>
                 </div>
@@ -46,7 +43,7 @@ include("../sisiny_mpampianatra.php");
                         <li class="list-group-item">Fanavaozana programa: 01/11/2025</li>
                         <li class="list-group-item text-success">
                             <i class="fas fa-money-bill-wave me-1"></i>
-                            Ecolage: Fandoavana farany 07/07/2025
+                            Saram-pianarana: Fandoavana farany 07/07/2025
                         </li>
                     </ul>
                 </div>

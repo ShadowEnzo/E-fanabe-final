@@ -1,6 +1,6 @@
 <?php
 session_start();
-$mpampifandray = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$mpampifandray = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 
 // Récupérer tous les mpampianatra
 $mpampianatra_liste = $mpampifandray->query("SELECT id, anarana, fanampiny FROM mpampianatra ORDER BY anarana")->fetchAll(PDO::FETCH_ASSOC);
@@ -79,7 +79,7 @@ include("../sisiny_mpitantana.php");
             <input type="text" class="form-control" name="efitrano">
         </div>
         <div class="col-md-6">
-            <label class="form-label">Mpampianatra (misafidiana, Ctrl ou Cmd pour multiple)</label>
+            <label class="form-label">Mpampianatra (misafidiana)</label>
             <select class="form-select" name="mpampianatra_ids[]" multiple required size="5">
                 <?php foreach ($mpampianatra_liste as $mp): ?>
                     <option value="<?= $mp['id'] ?>">

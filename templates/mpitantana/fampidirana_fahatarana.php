@@ -1,5 +1,5 @@
 <?php
-$mpampifandray = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$mpampifandray = new PDO('mysql:host=localhost;dbname=e_-anabe;charset=utf8', 'root', '');
 
 $sokajy = $_GET['sokajy'] ?? '';
 $id_persona = $_GET['id_persona'] ?? 0;
@@ -76,8 +76,8 @@ include("../sisiny_mpitantana.php");
                         <div class="mb-3">
                             <label for="karazana" class="form-label">Karazana</label>
                             <select class="form-select" id="karazana" name="karazana">
-                                <option value="Absence">Absence</option>
-                                <option value="Retard">Retard</option>
+                                <option value="Absence">Tsy fahatongavana</option>
+                                <option value="Retard">Fahatarana</option>
                             </select>
                         </div>
                         <div class="mb-3">

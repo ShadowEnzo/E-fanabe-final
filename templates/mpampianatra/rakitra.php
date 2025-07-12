@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 
 if (!isset($_SESSION['profil']) || $_SESSION['profil'] !== 'mpampianatra') { header('Location: ../fidirana.php'); exit; }
 
@@ -94,7 +94,7 @@ $rakitras = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="mg">
 <head>
     <meta charset="UTF-8">
-    <title>Gestion Rakitra & Devoirs</title>
+    <title>Fandrindrana Rakitra</title>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
      <link rel="stylesheet" href="../style.css">
@@ -107,13 +107,13 @@ include("../sisiny_mpampianatra.php");
 <main class="votoaty" id="votoaty">
     <div class="container py-3">
         <form class="mb-3" method="get">
-            <label for="classe" class="form-label">Filtrer par classe :</label>
+            <label for="classe" class="form-label">Fanavahana isan-kilasy :</label>
             <select name="classe" id="classe" class="form-select w-auto d-inline" onchange="this.form.submit()">
                 <?php foreach($classes as $c): ?>
                     <option value="<?= htmlspecialchars($c) ?>" <?= $classe==$c?'selected':'' ?>><?= htmlspecialchars($c) ?></option>
                 <?php endforeach; ?>
             </select>
-            <label for="matiere" class="form-label ms-3">Filtrer par matière :</label>
+            <label for="matiere" class="form-label ms-3">Fanavahana isan-taranja:</label>
             <select name="matiere" id="matiere" class="form-select w-auto d-inline" onchange="this.form.submit()">
                 <?php foreach($matieres as $m): ?>
                     <option value="<?= htmlspecialchars($m) ?>" <?= $matiere==$m?'selected':'' ?>><?= htmlspecialchars($m) ?></option>
@@ -124,14 +124,14 @@ include("../sisiny_mpampianatra.php");
             <!-- Fampiasana -->
             <div class="col-lg-6">
                 <div class="card mb-3">
-                    <div class="card-header bg-primary text-white">Ajouter un devoir</div>
+                    <div class="card-header bg-primary text-white">Andatsaka fampiasana</div>
                     <div class="card-body">
                         <?= $success_devoir ?>
                         <form method="post" enctype="multipart/form-data" class="row g-2">
                             <input type="hidden" name="add_devoir" value="1">
                             <div class="col-md-5">
                                 <select name="classe_devoir" class="form-select" required>
-                                    <option value="">Choisir la classe</option>
+                                    <option value="">Hisafidy kilasy</option>
                                     <?php foreach($classes as $c): ?>
                                         <option value="<?= htmlspecialchars($c) ?>" <?= $classe==$c?'selected':'' ?>><?= htmlspecialchars($c) ?></option>
                                     <?php endforeach; ?>
@@ -139,32 +139,32 @@ include("../sisiny_mpampianatra.php");
                             </div>
                             <div class="col-md-5">
                                 <select name="matiere_devoir" class="form-select" required>
-                                    <option value="">Choisir la matière</option>
+                                    <option value="">Hisafidy taranja</option>
                                     <?php foreach($matieres as $m): ?>
                                         <option value="<?= htmlspecialchars($m) ?>" <?= $matiere==$m?'selected':'' ?>><?= htmlspecialchars($m) ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
                             <div class="col-md-7">
-                                <input type="text" name="titre_devoir" class="form-control" required placeholder="Titre du devoir">
+                                <input type="text" name="titre_devoir" class="form-control" required placeholder="Lohateny fampiasana">
                             </div>
                             <div class="col-12">
-                                <textarea name="desc_devoir" class="form-control" placeholder="Description / consignes"></textarea>
+                                <textarea name="desc_devoir" class="form-control" placeholder="Toro-lalana"></textarea>
                             </div>
                             <div class="col-md-7">
                                 <input type="file" name="fichier_devoir" class="form-control">
                             </div>
                             <div class="col-md-3">
-                                <input type="date" name="date_limite" class="form-control" placeholder="Date limite">
+                                <input type="date" name="date_limite" class="form-control" placeholder="Daty farany">
                             </div>
                             <div class="col-md-2">
-                                <button class="btn btn-success w-100" type="submit">Ajouter</button>
+                                <button class="btn btn-success w-100" type="submit">Hanampy</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="card mb-3">
-                    <div class="card-header bg-light fw-bold">Devoirs à faire (<?= htmlspecialchars($classe) ?>, <?= htmlspecialchars($matiere) ?>)</div>
+                    <div class="card-header bg-light fw-bold">Fampiasana hatao (<?= htmlspecialchars($classe) ?>, <?= htmlspecialchars($matiere) ?>)</div>
                     <div class="card-body p-2">
                         <ul class="list-group">
                             <?php foreach($devoirs as $d): ?>
@@ -183,21 +183,21 @@ include("../sisiny_mpampianatra.php");
                                 </li>
                             <?php endforeach; ?>
                             <?php if(!$devoirs): ?>
-                                <li class="list-group-item text-muted">Aucun devoir à faire.</li>
+                                <li class="list-group-item text-muted">Tsy misy fampiasana.</li>
                             <?php endif; ?>
                         </ul>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header bg-light fw-bold">Devoirs envoyés par les élèves</div>
+                    <div class="card-header bg-light fw-bold">Fampiasana nalefan'ny mpianatra</div>
                     <div class="card-body p-2">
                         <ul class="list-group">
                             <?php foreach($devoirs_rendus as $r): ?>
                                 <li class="list-group-item">
                                     <strong><?= htmlspecialchars($r['anarana']) ?> <?= htmlspecialchars($r['fanampiny']) ?></strong>
-                                    - <span class="text-muted">Devoir: <?= htmlspecialchars($r['titre']) ?></span>
+                                    - <span class="text-muted">fampiasana: <?= htmlspecialchars($r['titre']) ?></span>
                                     <?php if(!empty($r['fichier'])): ?>
-                                        <a href="<?= htmlspecialchars($r['fichier']) ?>" target="_blank" class="btn btn-sm btn-outline-primary ms-2"><i class="fas fa-eye"></i> Voir</a>
+                                        <a href="<?= htmlspecialchars($r['fichier']) ?>" target="_blank" class="btn btn-sm btn-outline-primary ms-2"><i class="fas fa-eye"></i> Hijery</a>
                                     <?php endif; ?>
                                     <span class="badge bg-secondary ms-2"><?= htmlspecialchars($r['date_envoi']) ?></span>
                                     <?php if($r['appreciation']): ?>
@@ -206,7 +206,7 @@ include("../sisiny_mpampianatra.php");
                                 </li>
                             <?php endforeach; ?>
                             <?php if(!$devoirs_rendus): ?>
-                                <li class="list-group-item text-muted">Aucun devoir rendu.</li>
+                                <li class="list-group-item text-muted">Tsy mbola namerina fampiasana.</li>
                             <?php endif; ?>
                         </ul>
                     </div>
@@ -215,14 +215,14 @@ include("../sisiny_mpampianatra.php");
             <!-- RAKITRA -->
             <div class="col-lg-6">
                 <div class="card mb-3">
-                    <div class="card-header bg-warning text-dark">Ajouter une leçon / rakitra</div>
+                    <div class="card-header bg-warning text-dark">Hanampy lesona / rakitra</div>
                     <div class="card-body">
                         <?= $success_rakitra ?>
                         <form method="post" enctype="multipart/form-data" class="row g-2">
                             <input type="hidden" name="add_rakitra" value="1">
                             <div class="col-md-5">
                                 <select name="classe_rakitra" class="form-select" required>
-                                    <option value="">Choisir la classe</option>
+                                    <option value="">Hisafidy kilasy</option>
                                     <?php foreach($classes as $c): ?>
                                         <option value="<?= htmlspecialchars($c) ?>" <?= $classe==$c?'selected':'' ?>><?= htmlspecialchars($c) ?></option>
                                     <?php endforeach; ?>
@@ -230,26 +230,26 @@ include("../sisiny_mpampianatra.php");
                             </div>
                             <div class="col-md-5">
                                 <select name="matiere_rakitra" class="form-select" required>
-                                    <option value="">Choisir la matière</option>
+                                    <option value="">Hisafidy taranja</option>
                                     <?php foreach($matieres as $m): ?>
                                         <option value="<?= htmlspecialchars($m) ?>" <?= $matiere==$m?'selected':'' ?>><?= htmlspecialchars($m) ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
                             <div class="col-md-7">
-                                <input type="text" name="titre_rakitra" class="form-control" required placeholder="Titre de la leçon">
+                                <input type="text" name="titre_rakitra" class="form-control" required placeholder="Lohateny Lesona">
                             </div>
                             <div class="col-md-8">
                                 <input type="file" name="fichier_rakitra" class="form-control" required>
                             </div>
                             <div class="col-md-4">
-                                <button class="btn btn-success w-100" type="submit">Ajouter</button>
+                                <button class="btn btn-success w-100" type="submit">Hanampy</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header bg-light fw-bold">Leçons / Rakitra envoyés (<?= htmlspecialchars($classe) ?>, <?= htmlspecialchars($matiere) ?>)</div>
+                    <div class="card-header bg-light fw-bold">Lesona / Rakitra nalefa (<?= htmlspecialchars($classe) ?>, <?= htmlspecialchars($matiere) ?>)</div>
                     <div class="card-body p-2">
                         <ul class="list-group">
                             <?php foreach($rakitras as $r): ?>
@@ -261,7 +261,7 @@ include("../sisiny_mpampianatra.php");
                                 </li>
                             <?php endforeach; ?>
                             <?php if(!$rakitras): ?>
-                                <li class="list-group-item text-muted">Aucune leçon/rakitra envoyée.</li>
+                                <li class="list-group-item text-muted">Tsy misy lesona/rakitra lasa.</li>
                             <?php endif; ?>
                         </ul>
                     </div>

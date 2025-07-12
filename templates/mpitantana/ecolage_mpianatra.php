@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=e_fanabe;charset=utf8', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=e-fanabe;charset=utf8', 'root', '');
 
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -191,7 +191,7 @@ include("../sisiny_mpitantana.php");
             </tr>
             <?php endforeach; ?>
             <?php if (!$ecolages): ?>
-            <tr><td colspan="<?= $is_admin ? '6':'5' ?>" class="text-center text-muted">Tsy misy écolage voasoratra.</td></tr>
+            <tr><td colspan="<?= $is_admin ? '6':'5' ?>" class="text-center text-muted">Tsy misy saram-pianarana voasoratra.</td></tr>
             <?php endif; ?>
         </tbody>
     </table>
